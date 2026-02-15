@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratik & Smriti — Written in the Stars</title>
+    <meta name="description" content="A love story written among the stars. Pratik & Smriti forever.">
+
+    <!-- Google Fonts — Premium pairing -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="pratik.css">
+</head>
+
+<body>
+
+    <!-- Stars background (CSS-only particles) -->
+    <div id="stars-container">
+        <div class="stars-layer stars-small"></div>
+        <div class="stars-layer stars-medium"></div>
+        <div class="stars-layer stars-large"></div>
+    </div>
+
+    <!-- Aurora effect -->
+    <div id="aurora"></div>
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor"></div>
+    <div id="cursor-trail"></div>
+
+    <!-- Floating Background Icons Container -->
+    <div id="floating-background"></div>
+
+    <!-- Audio Element -->
+    <audio id="bg-music" loop>
+        <source src="assets/Little Baby Smriti.mp3" type="audio/mpeg">
+    </audio>
+
+    <nav class="top-nav">
+        <button id="music-toggle" class="nav-btn">
+            <i data-lucide="music" size="16"></i> Play Music
+        </button>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 1: WELCOME — Grand Entrance
+         ═══════════════════════════════════════════ -->
+    <section id="welcome" class="active-section">
+        <div class="glass-card welcome-card">
+            <div class="title-ornament">✦</div>
+            <h1>Pratik <span class="amp">&</span> Smriti</h1>
+            <div class="title-divider">
+                <span></span>
+                <i data-lucide="heart" class="icon-inline icon-filled" size="14"></i>
+                <span></span>
+            </div>
+            <p class="subtext">A love story written in the stars</p>
+            <button id="enter-btn" class="cute-btn glow-btn">
+                Enter Our Universe <i data-lucide="sparkles" class="icon-inline"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 2: LOVE GAME
+         ═══════════════════════════════════════════ -->
+    <section id="love-game">
+        <div class="glass-card">
+            <h2>Do you love me?</h2>
+            <p class="subtext" style="margin-bottom: 2rem; opacity: 0.7">Choose wisely...</p>
+            <div class="buttons-container">
+                <button id="yes-btn" class="cute-btn yes-glow">
+                    YES! <i data-lucide="heart" class="icon-inline icon-filled"></i>
+                </button>
+                <button id="no-btn" class="cute-btn">
+                    NO <i data-lucide="thumbs-down" class="icon-inline"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 3: MEMORIES
+         ═══════════════════════════════════════════ -->
+    <section id="memories">
+        <div class="glass-panel">
+            <h2>Our Memories <i data-lucide="camera" class="icon-inline"></i></h2>
+            <p class="subtext" style="margin-bottom: 1.5rem">Hover to feel the moment</p>
+            <div class="cards-grid">
+                <div class="polaroid" data-caption="The moment I knew I was in trouble (the good kind).">
+                    <img src="assets/photo1.jpeg" alt="Memory 1">
+                </div>
+                <div class="polaroid" data-caption="You pretending to be innocent.">
+                    <img src="assets/photo2.jpeg" alt="Memory 2">
+                </div>
+                <div class="polaroid" data-caption="Main character energy unlocked.">
+                    <img src="assets/photo3.jpeg" alt="Memory 3">
+                </div>
+                <div class="polaroid" data-caption="Why are we like this?">
+                    <img src="assets/photo4.jpeg" alt="Memory 4">
+                </div>
+                <div class="polaroid" data-caption="Food > You (Just kidding... maybe).">
+                    <img src="assets/photo5.jpeg" alt="Memory 5">
+                </div>
+                <div class="polaroid" data-caption="Chaos level 1000.">
+                    <img src="assets/photo6.jpeg" alt="Memory 6">
+                </div>
+                <div class="polaroid" data-caption="Trying to be aesthetic but failing.">
+                    <img src="assets/photo7.jpeg" alt="Memory 7">
+                </div>
+                <div class="polaroid" data-caption="Look at this cutie (me, obviously).">
+                    <img src="assets/photo8.jpeg" alt="Memory 8">
+                </div>
+                <div class="polaroid" data-caption="Partner in crime.">
+                    <img src="assets/photo9.jpeg" alt="Memory 9">
+                </div>
+                <div class="polaroid" data-caption="Caught in 4K">
+                    <video src="assets/video1.mp4" muted loop onmouseover="this.play()"
+                        onmouseout="this.pause()"></video>
+                </div>
+                <div class="polaroid" data-caption="Bonus Chaos!">
+                    <img src="assets/photo11.jpeg" alt="Memory 11">
+                </div>
+                <div class="polaroid" data-caption="More Chaos!">
+                    <img src="assets/photo12.jpeg" alt="Memory 12">
+                </div>
+            </div>
+            <button id="next-memories-btn" class="nav-btn-next cute-btn">
+                Next Chapter <i data-lucide="chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Photo Modal -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal"><i data-lucide="x"></i></span>
+            <div id="modal-media-container"></div>
+            <p id="modal-caption"></p>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 4: LOVE TIMER
+         ═══════════════════════════════════════════ -->
+    <section id="timer">
+        <div class="glass-card">
+            <h2>Pratik &amp; Smriti</h2>
+            <p class="small-text">have been tolerating each other for:</p>
+            <div id="countdown" class="timer-container">
+                <div class="time-box cloud-shape">
+                    <span id="days">00</span>
+                    <span class="label">Days</span>
+                </div>
+                <div class="time-box cloud-shape">
+                    <span id="hours">00</span>
+                    <span class="label">Hours</span>
+                </div>
+                <div class="time-box cloud-shape">
+                    <span id="minutes">00</span>
+                    <span class="label">Mins</span>
+                </div>
+                <div class="time-box cloud-shape">
+                    <span id="seconds">00</span>
+                    <span class="label">Secs</span>
+                </div>
+            </div>
+            <p class="timer-footer">And forever to go... <i data-lucide="infinity" class="icon-inline"></i></p>
+            <button id="next-timer-btn" class="nav-btn-next cute-btn">
+                Next: Catch Me <i data-lucide="gamepad-2"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 5: CATCH THE HEART
+         ═══════════════════════════════════════════ -->
+    <section id="catch-heart" class="relative-game">
+        <div class="glass-card mini-card">
+            <h2>Catch my heart!</h2>
+            <p>Clicks needed: <span id="clicks-left">5</span></p>
+        </div>
+
+        <div id="moving-heart">
+            <i data-lucide="heart" size="120" color="#ff4757" fill="#ff4757"></i>
+        </div>
+
+        <div id="reward-container" class="hidden glass-card mini-card" style="margin-top: 20px;">
+            <h2>You caught it! <i data-lucide="trophy" class="icon-inline"></i></h2>
+            <p>You're fast.</p>
+            <button id="next-catch-btn" class="nav-btn-next cute-btn">
+                Claim Reward <i data-lucide="gift"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 6: SECRET LETTER
+         ═══════════════════════════════════════════ -->
+    <section id="secret">
+        <!-- Envelope visual -->
+        <div id="envelope-scene">
+            <div id="envelope-box">
+                <div id="env-flap"></div>
+                <div id="env-body">
+                    <span id="env-heart">&#10084;</span>
+                </div>
+            </div>
+            <button id="open-letter-btn" class="special-btn cute-btn glow-btn">
+                <i data-lucide="mail-open"></i> Open My Letter
+            </button>
+        </div>
+
+        <!-- Love letter overlay -->
+        <div id="love-letter-overlay" class="hidden">
+            <div id="love-letter-card">
+                <button id="close-letter-btn">&times;</button>
+                <h3>To My Dearest Smriti,</h3>
+                <p>
+                    Out of 8 billion people in this world,
+                    my heart somehow found its way to you.
+                </p>
+                <p>
+                    You are my favorite chaos, my calmest peace,
+                    and the most beautiful part of every single day.
+                </p>
+                <p>
+                    Every moment with you feels like a memory
+                    I never want to forget. Your laugh, your drama,
+                    your weird faces I love all of it.
+                </p>
+                <p>
+                    I love you more than words can say,
+                    more than code can compile,
+                    and more than the universe can hold.
+                </p>
+                <p class="letter-sign">Forever & Always Yours,<br><span>Pratik</span></p>
+            </div>
+        </div>
+
+        <footer class="glass-footer">
+            <p>Made with <i data-lucide="heart" class="icon-inline icon-filled" size="14"></i> for Smriti by Pratik</p>
+        </footer>
+    </section>
+
+    <!-- Celebration Message Modal -->
+    <div id="message-modal" class="modal hidden">
+        <div class="modal-content message-content">
+            <span class="close-message"><i data-lucide="x"></i></span>
+            <p id="message-text"></p>
+            <button id="message-ok-btn" class="cute-btn">
+                Yay! <i data-lucide="party-popper"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
